@@ -1,0 +1,23 @@
+package test;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import page.LoginPage;
+import util.BrowserFactory;
+
+public class AddNewProductTest {
+	WebDriver driver;
+	LoginPage loginPage;
+	@Test
+	@Parameters({"username","passwrod","productName","salesPrice","itemNumber","description"})
+	
+	public void addNewProduct(String userName,String password , String productName,String salesPrice, String itemNumber, String description) {
+		
+		driver = BrowserFactory.Startbrowser();
+		loginPage = PageFactory.initElements(driver, LoginPage.class);
+		loginPage.login(userName, password );
+	}
+}

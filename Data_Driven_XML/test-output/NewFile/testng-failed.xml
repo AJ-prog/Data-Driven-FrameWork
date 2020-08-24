@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [newfile]">
+  <test thread-count="5" name="AddNewProduct(failed)">
+    <parameter name="itemNumber" value="1"/>
+    <parameter name="password" value="abc123"/>
+    <parameter name="salesPrice" value="$5,000"/>
+    <parameter name="description" value="This APP will collect all of your bills in one page so you can keep truck on them"/>
+    <parameter name="userName" value="demo@techfios.com"/>
+    <parameter name="productName" value="Smart Bills Collector"/>
+    <classes>
+      <class name="test.AddNewProductTest">
+        <methods>
+          <include name="addNewProduct" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- test.AddNewProductTest -->
+    </classes>
+  </test> <!-- AddNewProduct(failed) -->
+</suite> <!-- Failed suite [newfile] -->

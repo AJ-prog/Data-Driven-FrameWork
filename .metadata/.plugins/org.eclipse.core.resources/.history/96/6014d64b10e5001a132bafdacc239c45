@@ -1,0 +1,60 @@
+package page;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+
+public class SideNavigation {
+	
+	WebDriver driver;
+	public SideNavigation(WebDriver driver) {
+		this.driver=driver;
+	}
+	@FindBy(how=How.XPATH,using="//*[@id=\"side-menu\"]/li[11]/a")
+	WebElement PRODUCTS_AND_SERVICES_LOCATOR;
+	@FindBy(how=How.XPATH,using="//*[@id=\"side-menu\"]/li[11]/ul/li[1]/a")
+	WebElement PROUDCTS_LOCATOR;
+	@FindBy(how=How.XPATH,using="//*[@id=\"side-menu\"]/li[11]/ul/li[2]/a")
+	WebElement NEW_PRODUCTS_LOCATOR;
+	
+	@FindBy(how=How.XPATH,using="//*[@id=\"name\"]")
+	WebElement NAME_FIELD_ELEMENT;
+	@FindBy(how=How.XPATH,using="//*[@id=\"sales_price\"]")
+	WebElement SALES_PRICE_FIELD_ELEMENT;
+	@FindBy(how=How.XPATH,using="//*[@id=\"item_number\"]")
+	WebElement ITEM_NUMBER_FIELD_ELEMENT;
+	@FindBy(how=How.XPATH,using="//*[@id=\"description\"]")
+	WebElement DESCRIPTION_FIELD_ELEMENT;
+	@FindBy(how=How.XPATH,using="//*[@id=\"submit\"]")
+	WebElement SUBMIT_BUTTON_LOCATOR;
+	@FindBy(how=How.XPATH,using="//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/div/div[1]/div/a")
+	WebElement LIST_PRODUCTS_BUTTON_LOCATOR;
+	
+	
+	public void clickOnProductsAndServices() {
+		PRODUCTS_AND_SERVICES_LOCATOR.click();
+	}
+	public void clickOnNewProducts() {
+		NEW_PRODUCTS_LOCATOR.click();
+	}
+	public void typeInNameFiled() {
+		NAME_FIELD_ELEMENT.sendKeys("AJ");
+	}
+	public void typeInSalesPriceField() {
+		SALES_PRICE_FIELD_ELEMENT.sendKeys("$5,000");
+	}
+	public void typeInItemNumber() {
+		ITEM_NUMBER_FIELD_ELEMENT.sendKeys("1");
+	}
+	public void typeInDescriptionFiled() {
+		DESCRIPTION_FIELD_ELEMENT.sendKeys("This APP will combine all your bills in one page so you can keep truck on them");
+	}
+	public void clickOnSubmitButton() {
+		SUBMIT_BUTTON_LOCATOR.click();
+	}
+	public void clickOnListProductsButton() {
+		LIST_PRODUCTS_BUTTON_LOCATOR.click();
+	}
+		
+}

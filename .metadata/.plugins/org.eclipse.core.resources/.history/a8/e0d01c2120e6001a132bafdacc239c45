@@ -1,0 +1,44 @@
+package test;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import page.AddNewProductPage;
+import page.BasePage;
+import page.ListProductPage;
+import page.LoginPage;
+import page.SideNavigation;
+import util.BrowserFactory;
+
+public class AddNewProductTest extends BasePage {
+	WebDriver driver;
+	LoginPage loginPage;
+	SideNavigation sideNavigation;
+	AddNewProductPage addNewProductPage;
+	ListProductPage listProductPage;
+
+	@Test
+	@Parameters({ "userName", "password", "productName", "salesPrice", "itemNumber", "description" })
+
+	public void addNewProduct(String userName, String password, String productName, String salesPrice,
+			String itemNumber, String description) throws InterruptedException {
+
+		driver = BrowserFactory.Startbrowser();
+		loginPage = PageFactory.initElements(driver, LoginPage.class);
+		loginPage.login(userName, password);
+
+		sideNavigation = PageFactory.initElements(driver, SideNavigation.class);
+		sideNavigation.clickOnProductsAndServices();
+		sideNavigation.clickOnNewProducts();
+		// String expectedResult=productName;
+		Thread.sleep(2000);
+		addNewProductPage = PageFactory.initElements(driver, AddNewProductPage.class);
+		addNewProductPage.fillingAddProductsForm(productName, salesPrice, itemNumber, description);
+
+		listProductPage = PageFactory.initElements(driver, ListProductPage.class);
+		listProductPage.clickOnListProductsButton();
+
+	}
+}

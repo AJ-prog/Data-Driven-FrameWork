@@ -1,0 +1,36 @@
+package page;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+
+public class AddNewProductPage {
+
+	WebDriver driver;
+
+	// Every Page must have a constructor to invite the driver
+	public AddNewProductPage(WebDriver driver) {
+		this.driver = driver;
+}
+	@FindBy(how=How.ID,using="name")
+	WebElement NAME_FIELD_ELEMENT;
+	@FindBy(how=How.ID,using="sales_price")
+	WebElement SALES_PRICE_FIELD_ELEMENT;
+	@FindBy(how=How.ID,using="item_number")
+	WebElement ITEM_NUMBER_FIELD_ELEMENT;
+	@FindBy(how=How.XPATH,using="//*[@id=\"description\"]")
+	WebElement DESCRIPTION_FIELD_ELEMENT;
+	@FindBy(how=How.XPATH,using="//*[@id=\"submit\"]")
+	WebElement SUBMIT_BUTTON_LOCATOR;
+
+	
+	public void fillingAddProductsForm(String productName,String salesPrice, String itemNumber, String description) throws InterruptedException {
+		NAME_FIELD_ELEMENT.sendKeys("Smart Bills Collector");
+		SALES_PRICE_FIELD_ELEMENT.sendKeys("$5,000");
+		ITEM_NUMBER_FIELD_ELEMENT.sendKeys("1");
+		DESCRIPTION_FIELD_ELEMENT.sendKeys("This APP will collect all of your bills in one page so you can keep truck on them");
+		Thread.sleep(2000);
+		SUBMIT_BUTTON_LOCATOR.click();
+	}
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="regression">
+	<test name="AddNewProductTest ">
+		<parameter name="userName" value="demo@techfios.com" />
+		<parameter name="password" value="abc123" />
+		<parameter name="productName" value="Smart Bills Collector" />
+		<parameter name="salesPrice" value="$5,000" />
+		<parameter name="itemNumber" value="1" />
+		<parameter name="description"value="This APP will collect all of your bills in one page so you can keep truck on them" />
+		<classes>
+			<class name="test.AddProductTest" />
+		</classes>
+	</test>
+</suite>

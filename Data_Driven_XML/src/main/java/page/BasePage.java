@@ -1,0 +1,16 @@
+package page;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class BasePage {
+
+	public static void  waitForElement (WebDriver driver , int timeInSecond,By locator) {
+		//the second WebDriverWait once we hove over it will pull up suggestions we pick(WebDiver,long)
+		WebDriverWait wait = new WebDriverWait(driver, timeInSecond);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		
+	}
+}

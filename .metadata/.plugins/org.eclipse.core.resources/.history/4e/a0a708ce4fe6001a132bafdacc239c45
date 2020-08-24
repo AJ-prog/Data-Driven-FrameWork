@@ -1,0 +1,26 @@
+package test;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import util.BrowserFactory;
+import util.ExcelReader;
+
+public class OpenSourceLoginTest {
+	WebDriver driver;
+	ExcelReader reader = new ExcelReader("./data/login.xlsx");
+	String userName =reader.getCellData("Sheet1","UserName", 1);
+	
+	
+	@Test
+	public void loginTest() {	
+	driver = BrowserFactory.startBrowser();
+		
+	}
+	
+	
+	
+	
+	
+	
+}

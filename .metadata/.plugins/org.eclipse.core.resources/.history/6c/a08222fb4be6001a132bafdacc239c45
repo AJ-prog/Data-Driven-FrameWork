@@ -1,0 +1,10 @@
+package test;
+
+import org.openqa.selenium.WebDriver;
+
+import util.ExcelReader;
+
+public class OpenSourceLoginTest {
+	WebDriver drievr;
+	ExcelReader reader = new ExcelReader("./data/login.xlsx");
+}
